@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.centossamplespringboot.controller.issueDao">
+
+    <resultMap id="getIssuesResMap" type="com.example.centossamplespringboot.dto.GetIssueRes">
+        <id property="issueNo" column="issue_no" />
+        <result property="rqTitleName" column="rq_title_name" />
+        <result property="issueStatusCd" column="issue_status_cd" />
+    </resultMap>
+
+    <select id="getIssues" resultMap="getIssuesResMap">
+    SELECT issue_no, rq_title_name,issue_status_cd
+    FROM public.ex_issue_master t
+    </select>
+
+</mapper>
